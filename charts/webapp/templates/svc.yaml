@@ -11,9 +11,6 @@ metadata:
 {{- if .Values.service.annotations }}
 {{ toYaml .Values.service.annotations | indent 4 }}
 {{- end }}
-{{- if .Values.metrics.enabled }}
-{{ toYaml .Values.metrics.annotations | indent 4 }}
-{{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -22,11 +19,6 @@ spec:
     targetPort: app
 {{- if .Values.service.nodePort }}
     nodePort: {{ .Values.service.nodePort }}
-{{- end }}
-{{- if .Values.metrics.enabled }}
-  - name: metrics
-    port: 9104
-    targetPort: metrics
 {{- end }}
   selector:
     app: {{ template "webapp.fullname" . }}
