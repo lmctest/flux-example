@@ -17,9 +17,9 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-  - name: mysql
-    port: 3306
-    targetPort: mysql
+  - name: app
+    port: 5001
+    targetPort: app
 {{- if .Values.service.nodePort }}
     nodePort: {{ .Values.service.nodePort }}
 {{- end }}
