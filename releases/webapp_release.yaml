@@ -1,0 +1,14 @@
+---
+  apiVersion: helm.integrations.flux.weave.works/v1alpha2
+  kind: FluxHelmRelease
+  metadata:
+    name: webapp
+    namespace: test-deployment
+    labels:
+      chart: webapp
+  spec:
+    chartGitPath: webapp
+    values:
+      image: registry.hub.docker.com/lmctest/test:latest
+      persistence:
+        enabled: false
