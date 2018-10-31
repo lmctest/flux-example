@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: registry.hub.docker.com/cceshop/web-fe:latest
+        image: registry.hub.docker.com/cceshop/web-fe:2018.06.1efd577
         imagePullPolicy: Always
         ports:
         - containerPort: 5001
