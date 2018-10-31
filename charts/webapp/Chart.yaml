@@ -1,3 +1,4 @@
+---
 appVersion: 10.1.30
 description: Fast, reliable, scalable, and easy to use open-source relational database
   system. MariaDB Server is intended for mission-critical, heavy-load production systems
@@ -7,13 +8,9 @@ home: https://webapp.org
 icon: https://bitnami.com/assets/stacks/webapp/img/webapp-stack-220x234.png
 keywords:
 - webapp
-- mysql
-- database
-- sql
-- prometheus
 maintainers:
-- email: containers@bitnami.com
-  name: bitnami-bot
+- email: holym@lmc.eu
+  name: Martin Holy / Architecture team
 name: webapp
 sources:
 - https://github.com/bitnami/bitnami-docker-webapp
