@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  minReadySeconds: 5
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: registry.hub.docker.com/cceshop/web-fe:latest
+        args:
+        - -msg=Ahoy
+        ports:
+        - containerPort: 80
