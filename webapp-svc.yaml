@@ -4,7 +4,7 @@ metadata:
   name: webapp
   namespace: test
   labels:
-    app: web-fe
+    app: webapp
 spec:
   ports:
     - port: 80
