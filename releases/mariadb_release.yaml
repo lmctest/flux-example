@@ -7,6 +7,7 @@
     labels:
       chart: mariadb
   spec:
+    replicas: 1
     chartGitPath: mariadb
     values:
       image: bitnami/mariadb:10.2.18
