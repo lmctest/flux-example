@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: webapp
+  namespace: test
+  labels:
+    app: web-fe
 spec:
   ports:
     - port: 80
