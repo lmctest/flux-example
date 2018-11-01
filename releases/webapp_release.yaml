@@ -14,7 +14,7 @@ spec:
   chartGitPath: webapp
   values:
     webapp:
-      replicas: 1
+      replicas: 3
       image: registry.hub.docker.com/lmctest/test:0.2
       persistence:
         enabled: false

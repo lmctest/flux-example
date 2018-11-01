@@ -1,18 +1,16 @@
 ---
-appVersion: 10.1.30
-description: Fast, reliable, scalable, and easy to use open-source relational database
-  system. MariaDB Server is intended for mission-critical, heavy-load production systems
-  as well as for embedding into mass-deployed software.
+appVersion: 0.1.0
+description: LMC test application
 engine: gotpl
-home: https://webapp.org
+home: https://lmc.eu/
 icon: https://bitnami.com/assets/stacks/webapp/img/webapp-stack-220x234.png
 keywords:
 - webapp
+- test
 maintainers:
 - email: holym@lmc.eu
   name: Martin Holy / Architecture team
 name: webapp
 sources:
-- https://github.com/bitnami/bitnami-docker-webapp
-- https://github.com/prometheus/mysqld_exporter
-version: 2.1.3
+- https://github.com/lmctest/flux-example
+version: 0.1.0
