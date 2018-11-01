@@ -8,17 +8,17 @@ metadata:
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
   annotations:
-{{- if .Values.service.annotations }}
-{{ toYaml .Values.service.annotations | indent 4 }}
+{{- if .Values.webapp.service.annotations }}
+{{ toYaml .Values.webapp.service.annotations | indent 4 }}
 {{- end }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .Values.webapp.service.type }}
   ports:
-  - name: app
+  - name: webapp
     port: 5001
-    targetPort: app
-{{- if .Values.service.nodePort }}
-    nodePort: {{ .Values.service.nodePort }}
+    targetPort: webapp
+{{- if .Values.webapp.service.nodePort }}
+    nodePort: {{ .Values.webapp.service.nodePort }}
 {{- end }}
   selector:
     app: {{ template "webapp.fullname" . }}
