@@ -1,4 +1,4 @@
-image: registry.hub.docker.com/lmctest/test:latest
+image: registry.hub.docker.com/lmctest/test:0.1
 
 ## Specify an imagePullPolicy (Required)
 ## It's recommended to change this to 'Always' if the image tag is 'latest'
