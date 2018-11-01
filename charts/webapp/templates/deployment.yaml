@@ -9,8 +9,8 @@ metadata:
     heritage: "{{ .Release.Service }}"
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.app: glob:app-kubernetes-*
-    flux.weave.works/tag.web: glob:web-kubernetes-*
+    # flux.weave.works/tag.app: glob:app-kubernetes-*
+    # flux.weave.works/tag.web: glob:web-kubernetes-*
 spec:
   replicas: {{ .Values.replicas }}
   template:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: "{{ .Values.image }}"
+        image: "{{ .Values.image }}"                            # registry.hub.docker.com/lmctest/test:latest
         imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
         ports:
         - name: mysql
