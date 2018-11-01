@@ -1,27 +1,28 @@
-image: registry.hub.docker.com/lmctest/test:0.1
+webapp:
+  image: registry.hub.docker.com/lmctest/test:0.1
 
-## Specify an imagePullPolicy (Required)
-## It's recommended to change this to 'Always' if the image tag is 'latest'
-## ref: http://kubernetes.io/docs/user-guide/images/#updating-images
-imagePullPolicy: Always
+  ## Specify an imagePullPolicy (Required)
+  ## It's recommended to change this to 'Always' if the image tag is 'latest'
+  ## ref: http://kubernetes.io/docs/user-guide/images/#updating-images
+  imagePullPolicy: Always
 
-service:
-  ## Kubernetes service type
-  type: ClusterIP
+  service:
+    ## Kubernetes service type
+    type: ClusterIP
 
-## Enable persistence using Persistent Volume Claims
-## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-##
-persistence:
-  enabled: false
+  ## Enable persistence using Persistent Volume Claims
+  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+  ##
+  persistence:
+    enabled: false
 
-## Configure resource requests and limits
-## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-##
-resources:
-  requests:
-    memory: 256Mi
-    cpu: 250m
+  ## Configure resource requests and limits
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  ##
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 250m
 
-## Replicas
-replicas: 1
+  ## Replicas
+  replicas: 1

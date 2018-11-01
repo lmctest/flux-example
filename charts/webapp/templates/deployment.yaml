@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: "{{ .Values.image }}"                            # registry.hub.docker.com/lmctest/test:latest
-        imagePullPolicy: {{ .Values.imagePullPolicy | quote }}
+        image: "{{ .Values.webapp.image }}"                            # registry.hub.docker.com/lmctest/test
+        imagePullPolicy: {{ .Values.webapp.imagePullPolicy | quote }}
         ports:
-        - name: mysql
+        - name: webapp
           containerPort: 5001
