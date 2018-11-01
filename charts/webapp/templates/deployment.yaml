@@ -9,8 +9,7 @@ metadata:
     heritage: "{{ .Release.Service }}"
   annotations:
     flux.weave.works/automated: "true"
-    # flux.weave.works/tag.app: glob:app-kubernetes-*
-    # flux.weave.works/tag.web: glob:web-kubernetes-*
+    flux.weave.works/tag.webapp: glob:*.*
 spec:
   replicas: {{ .Values.replicas }}
   template:
