@@ -7,9 +7,6 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
-  annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.{{ template "webapp.fullname" . }}: glob:*.*
 spec:
   replicas: {{ .Values.replicas }}
   template:

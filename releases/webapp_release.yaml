@@ -6,6 +6,10 @@ metadata:
   namespace: test-deployment
   labels:
     chart: webapp
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.webapp: glob:*.*
+
 spec:
   chartGitPath: webapp
   values:
