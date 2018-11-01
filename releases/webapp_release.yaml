@@ -8,13 +8,13 @@ metadata:
     chart: webapp
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.webapp: semver:0.*
+    flux.weave.works/tag.webapp: semver:*
 
 spec:
   chartGitPath: webapp
   values:
     webapp:
       replicas: 1
-      image: registry.hub.docker.com/lmctest/test:0.2
+      image: registry.hub.docker.com/lmctest/test:0.1
       persistence:
         enabled: false
