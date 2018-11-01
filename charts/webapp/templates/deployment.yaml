@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: {{ template "webapp.fullname" . }}
+        env: canary
     spec:
       containers:
       - name: webapp
