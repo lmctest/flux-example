@@ -7,8 +7,12 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.app: glob:app-kubernetes-*
+    flux.weave.works/tag.web: glob:web-kubernetes-*
 spec:
-  replicas: 3
+  replicas: {{ .Values.replicas }}
   template:
     metadata:
       labels:

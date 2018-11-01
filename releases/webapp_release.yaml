@@ -9,6 +9,7 @@ metadata:
 spec:
   chartGitPath: webapp
   values:
+    replicas: 1
     image: registry.hub.docker.com/lmctest/test:latest
     persistence:
       enabled: false
