@@ -14,7 +14,7 @@ keywords:
 maintainers:
 - email: holym@lmc.eu
   name: Martin Holy / Architecture team
-name: webapp
+name: fluxcloud
 sources:
 - https://github.com/lmctest/fluxcloud
 version: 0.1.0
