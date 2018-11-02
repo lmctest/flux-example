@@ -1,0 +1,20 @@
+---
+appVersion: 0.1.0
+description: Notify via Slack about Flux deployments.
+engine: gotpl
+home: https://lmc.eu/
+icon: https://bitnami.com/assets/stacks/webapp/img/webapp-stack-220x234.png
+keywords:
+- fluxcloud
+- flux
+- deployment
+- slack
+- notification
+- test
+maintainers:
+- email: holym@lmc.eu
+  name: Martin Holy / Architecture team
+name: webapp
+sources:
+- https://github.com/lmctest/fluxcloud
+version: 0.1.0

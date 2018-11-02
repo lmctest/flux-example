@@ -1,0 +1,20 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: fluxcloud
+  namespace: test-deployment
+  labels:
+    chart: fluxcloud
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.fluxcloud: semver:*.*
+
+spec:
+  chartGitPath: fluxcloud
+  values:
+    fluxcloud:
+      replicas: 1
+      image: registry.hub.docker.com/justinbarrick/fluxcloud:v0.2.11
+      persistence:
+        enabled: false
