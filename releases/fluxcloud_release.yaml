@@ -15,6 +15,6 @@ spec:
   values:
     fluxcloud:
       replicas: 1
-      image: registry.hub.docker.com/justinbarrick/fluxcloud:latest
+      image: registry.hub.docker.com/justinbarrick/fluxcloud:master-29e0013
       persistence:
         enabled: false
