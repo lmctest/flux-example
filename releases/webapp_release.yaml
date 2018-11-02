@@ -3,7 +3,7 @@ apiVersion: helm.integrations.flux.weave.works/v1alpha2
 kind: FluxHelmRelease
 metadata:
   name: webapp
-  namespace: test-deployment
+  namespace: deployment
   labels:
     chart: webapp
   annotations:
