@@ -8,13 +8,13 @@ metadata:
     chart: fluxcloud
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.fluxcloud: semver:*.*
+    flux.weave.works/tag.fluxcloud: glob:*
 
 spec:
   chartGitPath: fluxcloud
   values:
     fluxcloud:
       replicas: 1
-      image: registry.hub.docker.com/justinbarrick/fluxcloud:2018.5.2
+      image: registry.hub.docker.com/justinbarrick/fluxcloud:latest
       persistence:
         enabled: false

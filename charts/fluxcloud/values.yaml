@@ -1,5 +1,5 @@
 fluxcloud:
-  image: registry.hub.docker.com/justinbarrick/fluxcloud:v0.2.11
+  image: registry.hub.docker.com/justinbarrick/fluxcloud:latest
 
   ## Specify an imagePullPolicy (Required)
   ## It's recommended to change this to 'Always' if the image tag is 'latest'
