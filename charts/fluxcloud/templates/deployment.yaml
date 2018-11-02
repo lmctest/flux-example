@@ -35,6 +35,6 @@ spec:
         - name: SLACK_ICON_EMOJI
           value: ":heart:"
         - name: GITHUB_URL
-          value: "https://github.com/lmctest/flux-example.git"
+          value: "https://github.com:lmctest/flux-example.git"
         - name: EXPORTER_TYPE
           value: "slack"
