@@ -8,7 +8,8 @@ webapp:
 
   service:
     ## Kubernetes service type
-    type: ClusterIP
+    # type: ClusterIP
+    type: LoadBalancer
 
   ## Enable persistence using Persistent Volume Claims
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
