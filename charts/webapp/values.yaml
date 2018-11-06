@@ -25,4 +25,4 @@ webapp:
       cpu: 250m
 
   ## Replicas
-  replicas: 1
+  replicas: 3
