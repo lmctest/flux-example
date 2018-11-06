@@ -15,6 +15,6 @@ spec:
   values:
     webapp:
       replicas: 3
-      image: registry.hub.docker.com/lmctest/test:0.5
+      image: registry.hub.docker.com/lmctest/test:0.6
       persistence:
         enabled: false
