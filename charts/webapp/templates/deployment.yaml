@@ -22,5 +22,5 @@ spec:
         image: "{{ .Values.webapp.image }}"
         imagePullPolicy: {{ .Values.webapp.imagePullPolicy | quote }}
         ports:
-        - name: webapp
+        - name: http2
           containerPort: 5001
