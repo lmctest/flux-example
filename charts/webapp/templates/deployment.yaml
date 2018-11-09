@@ -7,8 +7,6 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
-  annotation:
-    sidecar.istio.io/inject: {{ .Values.webapp.istio_inject }}
 spec:
   replicas: {{ .Values.webapp.replicas }}
   template:
@@ -16,10 +14,12 @@ spec:
       labels:
         app: {{ template "webapp.fullname" . }}
         env: canary
+      annotation:
+        sidecar.istio.io/inject: {{ .Values.webapp.istio_inject }}
     spec:
       containers:
       - name: webapp
-        image: "{{ .Values.webapp.image }}"                            # registry.hub.docker.com/lmctest/test
+        image: "{{ .Values.webapp.image }}"
         imagePullPolicy: {{ .Values.webapp.imagePullPolicy | quote }}
         ports:
         - name: webapp
