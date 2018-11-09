@@ -15,7 +15,7 @@ spec:
         app: {{ template "webapp.fullname" . }}
         env: canary
       annotation:
-        sidecar.istio.io/inject: {{ .Values.sidecar.istio.io/inject }}
+        sidecar.istio.io/inject: {{ .Values.webapp.istio_inject }}
         
     spec:
       containers:

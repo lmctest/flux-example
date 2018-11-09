@@ -26,3 +26,5 @@ webapp:
 
   ## Replicas
   replicas: 3
+
+  istio_inject: true
