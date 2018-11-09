@@ -14,8 +14,8 @@ spec:
   chartGitPath: webapp
   values:
     webapp:
-      istio_inject: disabled
-      replicas: 0
+      istio_inject: enabled
+      replicas: 1
       image: registry.hub.docker.com/lmctest/test:0.3
       persistence:
         enabled: false
