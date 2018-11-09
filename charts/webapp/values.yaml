@@ -27,4 +27,4 @@ webapp:
   ## Replicas
   replicas: 3
 
-  istio_inject: true
+  istio_inject: enabled
