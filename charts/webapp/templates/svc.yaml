@@ -14,9 +14,9 @@ metadata:
 spec:
   type: {{ .Values.webapp.service.type }}
   ports:
-  - name: webapp
+  - name: http2
     port: 5001
-    targetPort: webapp
+    targetPort: http2
 {{- if .Values.webapp.service.nodePort }}
     nodePort: {{ .Values.webapp.service.nodePort }}
 {{- end }}
