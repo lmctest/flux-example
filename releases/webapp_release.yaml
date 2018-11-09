@@ -9,6 +9,7 @@ metadata:
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.webapp: semver:*.*
+    sidecar.istio.io/inject: false
 
 spec:
   chartGitPath: webapp
