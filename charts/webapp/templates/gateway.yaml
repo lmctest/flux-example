@@ -9,7 +9,7 @@ spec:
     istio: ingressgateway # use istio default controller
   servers:
   - port:
-      number: 5001
+      number: 80
       name: http-webapp
       protocol: HTTP
     hosts:
