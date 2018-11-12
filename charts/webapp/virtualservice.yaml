@@ -8,7 +8,7 @@ spec:
   gateways:
   - webapp-gateway
   hosts:
-  - '*'
+  - "webapp.example.com"
   http:
   - match:
     - uri:
