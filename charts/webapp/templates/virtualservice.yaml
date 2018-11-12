@@ -9,7 +9,7 @@ spec:
   - webapp-gateway
   hosts:
   - "webapp.example.com"
-  http:
+  http-webapp:
   - match:
     - uri:
         exact: /

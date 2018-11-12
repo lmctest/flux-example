@@ -10,7 +10,7 @@ spec:
   servers:
   - port:
       number: 80
-      name: http
+      name: http-webapp
       protocol: HTTP
     hosts:
     - "webapp.example.com"
