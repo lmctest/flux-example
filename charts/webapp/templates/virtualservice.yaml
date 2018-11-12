@@ -19,6 +19,6 @@ spec:
         exact: /healthcheck
     route:
     - destination:
-        host: deployment-webapp-webapp
+        host: 127.0.0.1
         port:
           number: 5001
