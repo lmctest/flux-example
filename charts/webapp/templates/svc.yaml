@@ -16,7 +16,7 @@ spec:
   ports:
   - name: http2
     port: 5001
-    targetPort: http2
+    targetPort: 5001
 {{- if .Values.webapp.service.nodePort }}
     nodePort: {{ .Values.webapp.service.nodePort }}
 {{- end }}
