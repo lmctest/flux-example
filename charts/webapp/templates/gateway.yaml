@@ -2,7 +2,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: webapp-gw
+  name: webapp-gateway
   namespace: deployment
 spec:
   selector:
