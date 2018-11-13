@@ -5,6 +5,7 @@ metadata:
   name: {{ template "webapp.fullname" . }}
   labels:
     app: {{ template "webapp.fullname" . }}
+    version: {{ .Values.webapp.version }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
