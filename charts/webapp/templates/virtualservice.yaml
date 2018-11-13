@@ -11,12 +11,9 @@ spec:
   - "webapp.example.com"
   http:
   - match:
-    - uri:
+    - port: 5001
+      uri:
         prefix: /
-    - uri:
-        prefix: /buy
-    - uri:
-        prefix: /healthcheck
     route:
     - destination:
         host: deployment-webapp-webapp
