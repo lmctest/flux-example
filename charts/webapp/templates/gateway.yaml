@@ -2,7 +2,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: webapp-gateway
+  name: webapp-gw
   namespace: deployment
 spec:
   selector:
@@ -10,7 +10,7 @@ spec:
   servers:
   - port:
       number: 80
-      name: http-webapp
+      name: http
       protocol: HTTP
     hosts:
     - "webapp.example.com"

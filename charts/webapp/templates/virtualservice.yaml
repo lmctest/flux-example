@@ -2,11 +2,11 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: webapp
+  name: webapp-vs
   namespace: deployment
 spec:
   gateways:
-  - webapp-gateway
+  - webapp-gwy
   hosts:
   - "webapp.example.com"
   http:
