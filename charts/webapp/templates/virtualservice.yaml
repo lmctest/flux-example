@@ -15,6 +15,6 @@ spec:
         prefix: /
     route:
     - destination:
-        host: webapp
+        host: deployment-webapp-webapp
         port:
           number: 5001
