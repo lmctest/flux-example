@@ -2,14 +2,13 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: webapp-gateway
-  namespace: deployment
+  name: {{ template "webapp.fullname" . }}-gateway
 spec:
   selector:
     istio: ingressgateway # use istio default controller
   servers:
   - hosts:
-    - webapp.architecture.lmc
+    - {{ template "webapp.fullname" . }}.architecture.lmc
     port:
       name: http
       number: 80

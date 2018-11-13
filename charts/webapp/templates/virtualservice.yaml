@@ -2,19 +2,18 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: webapp
-  namespace: deployment
+  name: {{ template "webapp.fullname" . }}
 spec:
   gateways:
   - webapp-gateway
   hosts:
-  - "webapp.architecture.lmc"
+  - "{{ template "webapp.fullname" . }}.architecture.lmc"
   http:
   - match:
     - uri:
         prefix: /
     route:
     - destination:
-        host: 10.11.254.40
+        host: {{ template "webapp.fullname" . }}
         port:
           number: 5001
