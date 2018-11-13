@@ -8,14 +8,13 @@ spec:
   gateways:
   - webapp-gateway
   hosts:
-  - "webapp.example.com"
+  - "webapp.architecture.lmc"
   http:
   - match:
-    - port: 5001
-      uri:
+    - uri:
         prefix: /
     route:
     - destination:
-        host: deployment-webapp-webapp
+        host: webapp
         port:
           number: 5001

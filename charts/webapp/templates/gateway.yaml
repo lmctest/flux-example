@@ -8,9 +8,9 @@ spec:
   selector:
     istio: ingressgateway # use istio default controller
   servers:
-  - port:
-      number: 80
+  - hosts:
+    - webapp.architecture.lmc
+    port:
       name: http
+      number: 80
       protocol: HTTP
-    hosts:
-    - "webapp.example.com"
