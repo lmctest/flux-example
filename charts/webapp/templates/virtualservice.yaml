@@ -2,18 +2,25 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: {{ template "webapp.fullname" . }}
+  name: {{ template "webapp.fullname" . }}-route
 spec:
-  gateways:
-  - webapp-gateway
   hosts:
-  - "{{ template "webapp.fullname" . }}.architecture.lmc"
+  - {{ template "webapp.fullname" . }}.deployment.svc.cluster.local
   http:
   - match:
     - uri:
-        prefix: /
-    route:
+        prefix: "/"
+  - route:
     - destination:
-        host: {{ template "webapp.fullname" . }}
-        port:
-          number: 5001
+        host: {{ template "webapp.fullname" . }}.deployment.svc.cluster.local
+        # subset: v1
+    corsPolicy:
+      allowOrigin:
+      - lmc.eu
+      allowMethods:
+      - POST
+      - GET
+      allowCredentials: false
+      allowHeaders:
+      - X-Foo-Bar
+      maxAge: "1d"
