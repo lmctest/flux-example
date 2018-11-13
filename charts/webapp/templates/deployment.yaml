@@ -5,7 +5,6 @@ metadata:
   name: {{ template "webapp.fullname" . }}
   labels:
     app: {{ template "webapp.fullname" . }}
-    version: {{ .Chart.appVersion }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -15,6 +14,7 @@ spec:
     metadata:
       labels:
         app: {{ template "webapp.fullname" . }}
+        version: {{ .Values.webapp.version }}
         env: canary
       annotations:
 #        sidecar.istio.io/inject: {{ .Values.webapp.istio_inject }}
