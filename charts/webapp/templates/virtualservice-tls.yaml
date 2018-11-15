@@ -2,12 +2,12 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: webapp-tls
+  name: {{ template "webapp.fullname" . }}-tls
 spec:
   hosts:
-  - "webapp.example.com"
+  - "{{ template "webapp.fullname" . }}.example.com"
   gateways:
-  - webapp-gateway-tls
+  - {{ template "webapp.fullname" . }}-gateway-tls
   http:
   - match:
     - uri:
@@ -18,4 +18,4 @@ spec:
     - destination:
         port:
           number: 5001
-        host: deployment-webapp-webapp
+        host: {{ template "webapp.fullname" . }}

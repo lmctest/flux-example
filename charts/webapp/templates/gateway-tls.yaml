@@ -2,7 +2,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: webapp-gateway-tls
+  name: {{ template "webapp.fullname" . }}-gateway-tls
 spec:
   selector:
     istio: ingressgateway
@@ -17,4 +17,4 @@ spec:
       privateKey: /etc/istio/ingressgateway-certs/tls.key
       caCertificates: /etc/istio/ingressgateway-ca-certs/ca-chain.cert.pem
     hosts:
-    - "webapp.example.com"
+    - "{{ template "webapp.fullname" . }}.example.com"
