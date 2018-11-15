@@ -5,7 +5,7 @@ metadata:
   name: {{ template "webapp.fullname" . }}-tls
 spec:
   hosts:
-  - "{{ template "webapp.fullname" . }}.example.com"
+  - "{{ template "webapp.fullname" . }}.lmc.eu"
   gateways:
   - {{ template "webapp.fullname" . }}-gateway-tls
   http:
