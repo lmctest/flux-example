@@ -23,3 +23,10 @@ spec:
         imagePullPolicy: {{ .Values.webapp.imagePullPolicy | quote }}
         ports:
           - containerPort: 5001
+        volumeMounts:
+          - name: istio-certs
+            mountPath: /etc/istio-certs
+      volumes:
+      - name: istio-certs
+        secret:
+          secretName: istio-certs
