@@ -2,7 +2,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: {{ template "webapp.fullname" . }}-gateway-tls
+  name: default-gateway-tls
 spec:
   selector:
     istio: ingressgateway
@@ -12,9 +12,8 @@ spec:
       name: https
       protocol: HTTPS
     tls:
-      mode: MUTUAL
+      mode: SIMPLE
       serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
       privateKey: /etc/istio/ingressgateway-certs/tls.key
-      caCertificates: /etc/istio/ingressgateway-ca-certs/ca-chain.cert.pem
     hosts:
-    - "{{ template "webapp.fullname" . }}.lmc.eu"
+    - "*"
