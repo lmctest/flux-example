@@ -1,5 +1,5 @@
 webapp:
-  image: registry.hub.docker.com/lmctest/test:0.3
+  image: lmctest/test:0.5
 
   ## Specify an imagePullPolicy (Required)
   ## It's recommended to change this to 'Always' if the image tag is 'latest'
