@@ -16,7 +16,7 @@ spec:
     webapp:
       version: v0.2.1
       istio_inject: enabled
-      replicas: 1
+      replicas: 3
       image: registry.hub.docker.com/lmctest/test:0.5
       persistence:
         enabled: false
