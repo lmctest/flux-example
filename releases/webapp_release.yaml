@@ -1,5 +1,6 @@
 ---
-apiVersion: helm.integrations.flux.weave.works/v1alpha2
+#apiVersion: helm.integrations.flux.weave.works/v1alpha2
+apiVersion: flux.weave.works/v1beta1
 kind: FluxHelmRelease
 metadata:
   name: webapp
@@ -8,7 +9,8 @@ metadata:
     chart: webapp
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.webapp: semver:*.*
+#    flux.weave.works/tag.webapp: semver:*.*
+    flux.weave.works/tag.chart-image: semver:*.*
 
 spec:
   releaseName: webapp
