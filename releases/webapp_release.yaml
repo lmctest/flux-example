@@ -16,7 +16,6 @@ spec:
     git: ssh://git@github.com/lmctest/flux-example
     ref: master
     path: charts/webapp
-  chartGitPath: webapp
   values:
     webapp:
       version: v0.2.2
