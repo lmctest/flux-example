@@ -23,6 +23,6 @@ spec:
       version: v0.2.2
       istio_inject: enabled
       replicas: 1
-      image: lmctest/test:0.5
+      image: lmctest/test:0.1
       persistence:
         enabled: false
