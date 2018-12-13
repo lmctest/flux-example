@@ -10,8 +10,7 @@ metadata:
     chart: webapp
   annotations:
     flux.weave.works/automated: "true"
-#    flux.weave.works/tag.webapp: semver:*.*
-    flux.weave.works/tag.chart-image: semver:*.*
+    flux.weave.works/tag.webapp: semver:*.*
 
 spec:
   releaseName: webapp
