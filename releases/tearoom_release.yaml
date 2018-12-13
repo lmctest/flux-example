@@ -1,6 +1,8 @@
 ---
-apiVersion: helm.integrations.flux.weave.works/v1alpha2
-kind: FluxHelmRelease
+#apiVersion: helm.integrations.flux.weave.works/v1alpha2
+#kind: FluxHelmRelease
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease 
 metadata:
   name: tearoom
   namespace: deployment
@@ -11,13 +13,17 @@ metadata:
     flux.weave.works/tag.webapp: semver:*.*
 
 spec:
-  chartGitPath: tearoom
+  spec: 
+  chart: 
+    git: github.com/lmctest/flux-example
+    ref: master
+    path: charts/tearoom
   values:
     tearoom:
       version: v0.0.1
       istio_inject: enabled
-      replicas: 3
+      replicas: 1
       #image: dcreg.service.consul/holym/webapp:latest
-      image: lmctest/test:0.1
+      image: lmctest/lmc-architecture-tearoom_menu:2018.12.04-135628-feature_TEA_3_deployment-22.g262218f
       persistence:
         enabled: false
