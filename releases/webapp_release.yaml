@@ -13,7 +13,7 @@ metadata:
 spec:
   releaseName: webapp
   chart:
-    git: git@github.com:lmctest/flux-example
+    git: ssh://git@github.com/lmctest/flux-example
     ref: master
     path: charts/webapp
   chartGitPath: webapp
