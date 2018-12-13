@@ -13,7 +13,7 @@ metadata:
     flux.weave.works/tag.webapp: semver:*.*
 
 spec:
-  spec: 
+  releaseName: tearoom
   chart: 
     git: github.com/lmctest/flux-example
     ref: master
