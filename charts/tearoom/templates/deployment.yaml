@@ -1,0 +1,37 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "tearoom.fullname" . }}
+  labels:
+    app: {{ template "tearoom.fullname" . }}
+    tearoom_version: {{ .Values.tearoom.version }}
+    apache_version: {{ .Values.apache.version }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: {{ .Values.pod.replicas }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "tearoom.fullname" . }}
+        tearoom_version: {{ .Values.tearoom.version }}
+        apache_version: {{ .Values.apache.version }}
+    spec:
+      containers:
+      - name: tearoom
+        image: "{{ .Values.tearoom.image }}"
+        imagePullPolicy: {{ .Values.tearoom.imagePullPolicy | quote }}
+        ports:
+          - containerPort: {{ .Values.tearoom.port.number }}
+      - name: apache
+        image: "{{ .Values.apache.image }}"
+        imagePullPolicy: {{ .Values.apache.imagePullPolicy | quote }}
+        ports:
+          - containerPort: {{ .Values.apache.port.number }}
+        env:
+          - name: PHP_PROXY_ADDRESS
+            value: "127.0.0.1"
+          - name: PHP_PROXY_PORT
+            value: "{{ .Values.tearoom.port.number }}"

@@ -1,0 +1,15 @@
+---
+appVersion: 0.0.1
+description: LMC TeaRoom
+engine: gotpl
+home: https://lmc.eu/
+keywords:
+- tearoom
+- tutorial
+maintainers:
+- email: snebergerm@lmc.eu
+  name: Marek Sneberger / Architecture team
+name: teamroom
+sources:
+- https://stash.int.lmc.cz/scm/archi/flux-example.git
+version: 0.0.1

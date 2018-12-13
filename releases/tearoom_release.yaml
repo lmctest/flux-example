@@ -1,0 +1,23 @@
+---
+apiVersion: helm.integrations.flux.weave.works/v1alpha2
+kind: FluxHelmRelease
+metadata:
+  name: tearoom
+  namespace: deployment
+  labels:
+    chart: tearoom
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.webapp: semver:*.*
+
+spec:
+  chartGitPath: tearoom
+  values:
+    tearoom:
+      version: v0.0.1
+      istio_inject: enabled
+      replicas: 3
+      #image: dcreg.service.consul/holym/webapp:latest
+      image: lmctest/test:0.1
+      persistence:
+        enabled: false

@@ -1,0 +1,42 @@
+pod:
+  namespace: deployment
+  replicas: 3
+  istio_inject: enabled
+  service:
+    type: NodePort
+  persistence:
+    enabled: false
+
+tearoom:
+  # image: dcreg.service.consul/dev/lmc-architecture-tearoom_menu:2018.12.04-135628-feature_TEA_3_deployment-22.g262218f
+  image: lmctest/lmc-architecture-tearoom_menu:2018.12.04-135628-feature_TEA_3_deployment-22.g262218f
+  imagePullPolicy: Always
+
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 512m
+
+  port:
+    name: php
+    number: 9000
+
+  version: 0.0.1
+
+apache:
+  # image: dcreg.service.consul/prod/lmc-architecture-apache:latest
+  image: lmctest/lmc-architecture-apache:latest
+  imagePullPolicy: Always
+
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  resources:
+    requests:
+      memory: 256Mi
+      cpu:    512m
+
+  port:
+    name: http
+    number: 80
+
+  version: 0.0.1
