@@ -20,7 +20,7 @@ spec:
     tearoom:
       version: v0.0.1
       istio_inject: enabled
-      replicas: 1
+      replicas: 3
       image: lmctest/lmc-architecture-tearoom_menu:2018.12.04-135628-feature_TEA_3_deployment-22.g262218f
       persistence:
         enabled: false
