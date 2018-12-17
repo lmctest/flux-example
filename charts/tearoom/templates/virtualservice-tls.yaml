@@ -9,12 +9,10 @@ spec:
   - {{ template "tearoom.fullname" . }}
   gateways:
   - default-gateway-tls-{{ template "tearoom.fullname" . }}
-  http:
+   http:
   - match:
     - uri:
-        prefix: /
-    - uri:
-        prefix: /healthcheck
+        prefix: /tearoom
     route:
     - destination:
         port:
