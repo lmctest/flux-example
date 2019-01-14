@@ -1,3 +1,4 @@
+DO_NOT_DEPLOY!
 ---
 #apiVersion: helm.integrations.flux.weave.works/v1alpha2
 apiVersion: flux.weave.works/v1beta1

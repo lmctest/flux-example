@@ -2,15 +2,15 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: default-gateway-{{ template "tearoom.fullname" . }}
-  namespace: {{ .Values.pod.namespace }}
+  name: default-gateway-tearoom-tearoom
+  namespace: deployment
 spec:
   selector:
-    istio: ingressgateway
+    istio: ingressgateway # use Istio default gateway implementation
   servers:
   - port:
-      number: {{ .Values.apache.port.number }}
-      name: {{ .Values.apache.port.name }}
+      number: 80
+      name: http
       protocol: HTTP
     hosts:
     - "*"
