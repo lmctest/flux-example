@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Values.pod.namespace }}
 spec:
   hosts:
-  - '*'
+  - {{ template "tearoom.fullname" . }}
   gateways:
   - default-gateway-{{ template "tearoom.fullname" . }}
   http:
