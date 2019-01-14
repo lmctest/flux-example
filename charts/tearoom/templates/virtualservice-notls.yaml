@@ -2,13 +2,13 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: deployment-tearoom-tearoom
-  namespace: deployment
+  name: {{ template "tearoom.fullname" . }}
+  namespace: {{ .Values.pod.namespace }}
 spec:
   hosts:
-  - "*"
+  - '*'
   gateways:
-  - default-gateway-tearoom-tearoom
+  - default-gateway-{{ template "tearoom.fullname" . }}
   http:
   - match:
     - uri:
@@ -16,5 +16,5 @@ spec:
     route:
     - destination:
         port:
-          number: 80
-        host: tearoom-tearoom
+          number: {{ .Values.apache.port.number }}
+        host: {{ template "tearoom.fullname" . }}
