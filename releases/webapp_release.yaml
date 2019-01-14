@@ -1,9 +1,6 @@
-DO_NOT_DEPLOY!
 ---
-#apiVersion: helm.integrations.flux.weave.works/v1alpha2
-apiVersion: flux.weave.works/v1beta1
-kind: HelmRelease
-# kind: FluxHelmRelease
+#apiVersion: flux.weave.works/v1beta1
+#kind: HelmRelease
 metadata:
   name: webapp
   namespace: deployment
