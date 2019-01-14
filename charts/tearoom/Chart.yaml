@@ -11,7 +11,7 @@ maintainers:
   name: Marek Sneberger / Architecture team
 - email: holym@lmc.eu
   name: Martin Holy / Architecture team
-name: teamroom
+name: tearoom
 sources:
 - https://stash.int.lmc.cz/scm/archi/flux-example.git
 version: 0.0.2
