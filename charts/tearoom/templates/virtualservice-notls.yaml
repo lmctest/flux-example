@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Values.pod.namespace }}
 spec:
   hosts:
-  - {{ template "tearoom.fullname" . }}                   # what to specify to the -HHost when using curl
+  - {{ template "tearoom.fullname" . }}.deployment.svc.cluster.local                   # what to specify to the -HHost when using curl
   gateways:
   - default-gateway-{{ template "tearoom.fullname" . }}
   http:
