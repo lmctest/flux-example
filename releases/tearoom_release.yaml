@@ -18,9 +18,9 @@ spec:
     path: charts/tearoom
   values:
     tearoom:
-      version: v0.0.1
+      version: v0.0.2
       istio_inject: enabled
-      replicas: 3
+      replicas: 1
       image: lmctest/lmc-architecture-tearoom_menu:2018.12.04-135628-feature_TEA_3_deployment-22.g262218f
       persistence:
         enabled: false
