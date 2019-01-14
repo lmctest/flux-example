@@ -5,6 +5,7 @@ metadata:
   name: {{ template "tearoom.fullname" . }}
   labels:
     app: {{ template "tearoom.fullname" . }}
+    version: {{ .Values.pod.version }}
     tearoom_version: {{ .Values.tearoom.version }}
     apache_version: {{ .Values.apache.version }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
