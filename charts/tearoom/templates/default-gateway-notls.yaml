@@ -13,5 +13,4 @@ spec:
       name: http
       protocol: HTTP
     hosts:
-    - {{ template "tearoom.fullname" . }}.deployment.svc.cluster.local                   # what to specify to the -HHost when using curl
-                                                                                         # must contain FQDN, not a shortened name
+    - 'tearoom-tearoom.deployment.svc.cluster.local' #{{ template "tearoom.fullname" . }}.deployment.svc.cluster.local                   # what to specify to the -HHost when using curl
