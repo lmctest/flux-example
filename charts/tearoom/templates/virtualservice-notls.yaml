@@ -6,9 +6,9 @@ metadata:
   namespace: {{ .Values.pod.namespace }}
 spec:
   hosts:
-  - {{ template "tearoom.fullname" . }}                   # what to specify to the -HHost when using curl
+  - '{{ template "tearoom.fullname" . }}.deployment.svc.cluster.local'
   gateways:
-  - default-gateway-{{ template "tearoom.fullname" . }}
+  - 'default-gateway-{{ template "tearoom.fullname" . }}'
   http:
   - match:
     - uri:
@@ -17,5 +17,5 @@ spec:
     - destination:
         port:
           number: {{ .Values.apache.port.number }}
-        host: {{ template "tearoom.fullname" . }}.deployment.svc.cluster.local
+        host: '{{ template "tearoom.fullname" . }}.deployment.svc.cluster.local'
       weight: 100
