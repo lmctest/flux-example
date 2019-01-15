@@ -2,15 +2,15 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: default-gateway-tearoom-tearoom
-  namespace: deployment
+  name: default-gateway-{{ template "tearoom.fullname" . }}
+  namespace: {{ .Values.pod.namespace }}
 spec:
   selector:
     istio: ingressgateway # use Istio default gateway implementation
   servers:
   - port:
-      number: 80
-      name: http
+      number: {{ .Values.apache.port.number }}
+      name: {{ .Values.apache.port.name }}
       protocol: HTTP
     hosts:
-    - 'tearoom-tearoom.deployment.svc.cluster.local' #{{ template "tearoom.fullname" . }}.deployment.svc.cluster.local                   # what to specify to the -HHost when using curl
+    - '*'
