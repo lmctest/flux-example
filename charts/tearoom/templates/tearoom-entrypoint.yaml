@@ -23,13 +23,14 @@ metadata:
   namespace: {{ .Values.pod.namespace }}
 spec:
   hosts:
-  - '{{ template "tearoom.fullname" . }}.deployment.svc.cluster.local'
+#  - '{{ template "tearoom.fullname" . }}.deployment.svc.cluster.local'
+  - '*'
   gateways:
   - 'default-gateway-{{ template "tearoom.fullname" . }}'
   http:
   - match:
     - uri:
-        prefix: /
+        prefix: /tearoom
     route:
     - destination:
         port:
