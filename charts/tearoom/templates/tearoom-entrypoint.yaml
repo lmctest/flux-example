@@ -30,7 +30,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /tearoom
+        prefix: '/tearoom'
     route:
     - destination:
         port:
