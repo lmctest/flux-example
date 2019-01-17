@@ -11,7 +11,7 @@ spec:
   - port:
       number: {{ .Values.apache.port.number }}
       name: {{ .Values.apache.port.name }}
-      protocol: HTTP
+      protocol: {{ .Values.apache.port.protocol }}
     hosts:
     - '*'
 

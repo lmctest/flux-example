@@ -8,6 +8,12 @@ pod:
     enabled: false
   version: 0.0.2
 
+istio:
+  port:
+    name: https
+    number: 443
+    protocol: HTTPS
+
 tearoom:
   # image: dcreg.service.consul/dev/lmc-architecture-tearoom_menu:2018.12.04-135628-feature_TEA_3_deployment-22.g262218f
   image: lmctest/lmc-architecture-tearoom_menu:2018.12.04-135628-feature_TEA_3_deployment-22.g262218f
@@ -39,5 +45,6 @@ apache:
   port:
     name: http
     number: 80
+    protocol: HTTP
 
   version: 0.0.1

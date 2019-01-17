@@ -1,0 +1,42 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: default-gateway-tls-{{ template "tearoom.fullname" . }}
+  namespace: {{ .Values.pod.namespace }}
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: {{ .Values.istio.port.number }}
+      name: {{ .Values.istio.port.name }}
+      protocol: {{ .Values.istio.port.protocol }}
+    tls:
+      mode: SIMPLE
+      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+      privateKey: /etc/istio/ingressgateway-certs/tls.key
+    hosts:
+    - "*"
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ template "tearoom.fullname" . }}-tls
+  namespace: {{ .Values.pod.namespace }}
+spec:
+  hosts:
+  - '{{ template "tearoom.fullname" . }}.deployment.svc.cluster.local'
+  gateways:
+  - 'default-gateway-tls-{{ template "tearoom.fullname" . }}'
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        port:
+          number: {{ .Values.apache.port.number }}
+        host: {{ template "tearoom.fullname" . }}
+      weight: 100
